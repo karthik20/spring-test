@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Participant {
@@ -18,7 +21,8 @@ public class Participant {
     @Column(name = "training_id")
     private Long trainingId;
 
-    @OneToOne
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "training_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Training training;
 

@@ -1,4 +1,7 @@
 spring:
+  sql:
+    init:
+      mode: embedded
   datasource:
     url: jdbc:h2:mem:mydb
     username: sa
@@ -9,3 +12,8 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true

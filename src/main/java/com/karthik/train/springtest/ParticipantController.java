@@ -2,14 +2,14 @@ package com.karthik.train.springtest;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.karthik.train.springtest.entity.Participant;
 import com.karthik.train.springtest.service.ParticipantService;
 
-@Controller
+@RestController
 @RequestMapping("/participant")
 public class ParticipantController {
 
