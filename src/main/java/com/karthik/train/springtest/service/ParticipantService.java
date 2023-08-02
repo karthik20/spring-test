@@ -1,6 +1,7 @@
 package com.karthik.train.springtest.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,15 @@ public class ParticipantService {
         if(allParticiapnts.isEmpty()) {
             throw new ParticipantException("No participants data");
         }
-        return allParticiapnts;
+        return allParticiapnts.stream().map(p -> {
+            var name = p.getName();
+            p.setName(decorateParticipantName(name));
+            return p;
+        }).collect(Collectors.toList());
+    }
+
+    public String decorateParticipantName(String name) {
+        return name.trim().toUpperCase();
     }
 
 }
