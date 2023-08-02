@@ -20,7 +20,7 @@ public class ParticipantController {
     }
 
     
-    @GetMapping("/")
+    @GetMapping
     public List<Participant> getAll() {
         return participantService.getAllParticipants();
     }
